@@ -167,7 +167,7 @@ const MenuItem = ({ icon: Icon, label, path }) => {
     <li>
       <Link
         to={path}
-        className={`flex items-center p-2 text-gray-900  dark:text-white hover:bg-[#3D2A01] group
+        className={`flex items-center p-2  text-white hover:bg-[#3D2A01] group
         ${
           isActive ? "border-l-2 border-[#FFD60A] text-yellow bg-[#3D2A01]" : ""
         }`}

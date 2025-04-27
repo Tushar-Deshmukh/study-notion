@@ -13,7 +13,7 @@ export default {
           thinGray: "#C5C7D4",
         },
         coolgray: "#161D29",
-        hotgray:'#000814',
+        hotgray: "#000814",
         lightWhite: "#DBDDEA",
         borderGray: "#2C333F",
         textGray: "#6E727F",
@@ -27,16 +27,17 @@ export default {
         loginLayout: "calc(100vh - 70px)",
       },
 
-      maxWidth:{
-        50:'50rem'
+      maxWidth: {
+        50: "50rem",
       },
 
       fontSize: {
-        12:'12px',
+        12: "12px",
         14: "14px",
         16: "16px",
         18: "18px",
         24: "24px",
+        28: "28px",
         30: "30px",
         36: "36px",
       },

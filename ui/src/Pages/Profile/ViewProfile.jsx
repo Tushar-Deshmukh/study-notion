@@ -2,15 +2,14 @@ import { Button, Container } from "@mui/material";
 import React from "react";
 import { FaRegEdit } from "react-icons/fa";
 
-export default function ViewProfile({profile,handleTypeChange}) {
-    
+export default function ViewProfile({ profile, handleTypeChange }) {
   return (
     <div>
       <p className="text-30">My Profile</p>
 
       <Container maxWidth="md" className="mt-8">
         <div className="grid grid-cols-12 gap-2 p-4 border border-borderGray rounded-lg bg-coolgray">
-          <div className="col-span-9">
+          <div className="order-2 md:order-1 col-span-12 md:col-span-9">
             <div className="flex justify-start items-center gap-4">
               <img
                 src={profile?.profileImage}
@@ -25,7 +24,7 @@ export default function ViewProfile({profile,handleTypeChange}) {
             <div className="mt-4">
               <p className="text-18">Personal Details</p>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 mt-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 mt-3 md:mt-6">
                 <div>
                   <p className="text-textGray">First Name</p>
                   <p>{profile?.firstName}</p>
@@ -37,7 +36,7 @@ export default function ViewProfile({profile,handleTypeChange}) {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 mt-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 mt-3 md:mt-6">
                 <div>
                   <p className="text-textGray">Email</p>
                   <p>{profile?.email}</p>
@@ -51,9 +50,13 @@ export default function ViewProfile({profile,handleTypeChange}) {
             </div>
           </div>
 
-          <div className="col-span-3">
-            <Button variant="contained" startIcon={<FaRegEdit />}
-            onClick={() => handleTypeChange('edit')}
+          <div className="col-span-12 md:col-span-3 order-1 md:order-2 mb-2 md:mb-0">
+            <Button
+              variant="contained"
+              startIcon={<FaRegEdit />}
+              onClick={() => handleTypeChange("edit")}
+              size="small"
+             
             >
               Edit
             </Button>

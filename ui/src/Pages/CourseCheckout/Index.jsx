@@ -142,34 +142,42 @@ export default function Index() {
         >
           {/* course summary */}
           <div className="relative bg-coolgray p-4">
+
             <div className="px-6 w-full lg:max-w-2xl">
-              <Typography variant="h4">{course?.title}</Typography>
 
-              <p className="text-text-extraGray mt-2">{course?.description}</p>
+              <h4 variant="h4" className="text-lg md:text-3xl">{course?.title}</h4>
 
-              <p className="mt-4 text-lightWhite">
+              <p className="text-text-extraGray mt-2 font-light italic text-12 md:text-14">{course?.description}</p>
+
+              <p className="mt-4 text-lightWhite text-14 md:text-16">
                 Created By:-{" "}
                 {`${course?.createdBy?.firstName} ${course?.createdBy?.lastName}`}
               </p>
 
               <div className="mt-4 flex items-center justify-start gap-4">
-                <div className="flex items-center gap-2">
-                  <IoInformationCircleOutline size={25} />
+
+                <div className="flex items-center gap-2 text-14">
+                  <IoInformationCircleOutline size={20} />
                   <p>
                     Created At {moment(course?.createdAt).format("MM/YYYY")}
                   </p>
                 </div>
-                <div className="flex items-center gap-2">
+
+                <div className="flex items-center gap-2 text-14">
                   <TfiWorld size={20} />
                   <p>English</p>
                 </div>
+
               </div>
             </div>
 
             {/* checkout card */}
             <div className="bg-[#2C333F] static mt-10 lg:mt-0 lg:absolute top-5 right-10">
               <div>
-                <img src={course?.image} className="w-full h-80 lg:h-auto object-cover lg:max-w-sm" />
+                <img
+                  src={course?.image}
+                  className="w-full h-80 lg:h-auto object-cover lg:max-w-sm"
+                />
               </div>
 
               <div className="p-6">
@@ -258,22 +266,21 @@ export default function Index() {
                   }}
                 >
                   <Box className="w-full flex items-center justify-between">
-                    <Typography variant="h6">{topic?.name}</Typography>
-                    <Box className="flex items-center gap-4">
-                      <Typography
-                        variant="body2"
-                        className="text-text-extraGray"
-                      >
+                    <h6 className="text-16 md:text-18">{topic?.name}</h6>
+
+                    <Box className="flex items-center shrink-0 md:gap-4">
+                      <p className="text-text-extraGray hidden md:inline-block text-14">
                         {topic?.topicDuration &&
                           formatDuration(topic?.topicDuration)}
-                      </Typography>
+                      </p>
 
-                      <Typography variant="body2" className="text-yellow">
+                      <p className="text-yellow px-2 italic text-12">
                         {topic?.subTopics?.length} lecture(s)
-                      </Typography>
+                      </p>
                     </Box>
                   </Box>
                 </AccordionSummary>
+
                 <AccordionDetails>
                   <List
                     sx={{
@@ -291,10 +298,20 @@ export default function Index() {
                       <ListItem key={subtopic?._id}>
                         <img src="/images/tv.png" />
                         <ListItemText
-                          primary={subtopic?.title}
-                          secondary={subtopic?.description}
+                          primary={
+                            <p className="text-12 md:text-14">
+                              {subtopic?.title}
+                            </p>
+                          }
+                          secondary={
+                            <p className="text-12 italic font-light">
+                              {subtopic?.description}
+                            </p>
+                          }
                         />
-                        <p>{subtopic?.videoPlaybackTime}</p>
+                        <p className="text-12 md:text-14">
+                          {subtopic?.videoPlaybackTime}
+                        </p>
                       </ListItem>
                     ))}
                   </List>
@@ -313,7 +330,7 @@ export default function Index() {
               />
               <p>{`${course?.createdBy?.firstName} ${course?.createdBy?.lastName}`}</p>
             </div>
-            <p>{course?.createdBy?.about}</p>
+            <p className="text-14 md:text-16">{course?.createdBy?.about}</p>
           </div>
 
           {/* review */}
